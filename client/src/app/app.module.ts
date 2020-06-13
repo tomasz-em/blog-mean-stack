@@ -7,6 +7,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { PostsComponent } from './posts/posts.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -21,11 +22,15 @@ const routes: Routes = [
     path: 'admin',
     component: AdminComponent,
   },
+  {
+    path: 'login',
+    component: LoginComponent,
+  }
 ];
 
 @NgModule({
-  declarations: [AppComponent, PostsComponent, PostComponent, AdminComponent],
-  imports: [BrowserModule, RouterModule.forRoot( routes )],
+  declarations: [AppComponent, PostsComponent, PostComponent, AdminComponent, LoginComponent],
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot( routes )],  // dodaj ręcznie "FormsModule" i jest OK
   providers: [],
   bootstrap: [AppComponent],
 })

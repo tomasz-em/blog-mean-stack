@@ -1,0 +1,12 @@
+<h2>Logowanie</h2>
+<div class="login">
+    <div>
+        <label for="email" >adres email </label><input id="email" [(ngModel)]="email"/>
+    </div>
+    <div>
+        <label for="pass-word">hasło</label><input type="password" id="pass-word" [(ngModel)]="password"  />
+    </div>
+    <div>
+        <button (click)="handleLogin()">Zaloguj</button>
+    </div>
+</div>

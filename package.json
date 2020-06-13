@@ -6,9 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "npm --prefix client install && npm --prefix client run build-prod"
   },
   "author": "",
+  "private": true,
   "license": "ISC",
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.901.8",

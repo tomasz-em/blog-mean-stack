@@ -1,16 +1,16 @@
 <h2>Dodawanie nowego wpisu</h2>
 <div class="new-content">
     <div>
-        <label for="title">Tytuł</label><input type="text" name="title" #title />
+        <label for="post-title" >Tytuł </label><input id="post-title" [(ngModel)]="title" />
     </div>
     <div>
-        <label for="about-post">Opis treści</label><input type="text" name="about-post" #shortContent />
+        <label for="post-short">Opis treści</label><textarea id="post-short" [(ngModel)]="shortContent"></textarea>
     </div>
     <div>
-        <label for="content">Treść</label><textarea name="content" #longContent ></textarea>
+        <label for="post-long" >Treść</label><textarea id="post-long" [(ngModel)]="longContent"></textarea>
     </div>
     <div>
-        <input type="submit" value="Zapisz" (click)="handleSubmit({title: title.value, shortContent: shortContent.value, longContent: longContent.value })" />
+        <button (click)="handleAddingNewPost()">Zapisz</button>
     </div>
 </div>
 
