@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms'; // wymagane dopisanie tego by oiperować na formach
+
 import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
@@ -23,7 +25,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, PostsComponent, PostComponent, AdminComponent],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, RouterModule.forRoot( routes )],
   providers: [],
   bootstrap: [AppComponent],
 })

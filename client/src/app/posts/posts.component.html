@@ -1,12 +1,13 @@
-<h3>Lista wszystkich postów!</h3>
+<h3>Witaj na blogu, Pasjonacie!</h3>
+
+<h3>Oto lista wszystkich wartościowych postów:</h3>
   
 <div *ngIf="data !== null">
     <section *ngFor="let element of data; let i = index">
         <h2>{{ element?.title }} - <a href="post/{{ element?.id }}">Czytaj </a></h2>
         <h3>{{ element?.shortContent }}</h3>
-        <hr >
+        <hr />
     </section>
-
 </div>  
 
-<div *ngIf="data === null">Brak źródła danych</div>
+<div *ngIf="data === null" class="error-text">Brak źródła danych</div>

@@ -8,11 +8,10 @@ import { Post, postData } from './../post';
   styleUrls: ['./post.component.scss'],
 })
 export class PostComponent {
-  // @Input() postNumber;
-  postId = null;
+  postId = null;  // numer postu do sywświtlenia, wstępnie nieokreślony
 
-  constructor(activatedRoute: ActivatedRoute) {
-    activatedRoute.params.subscribe((params) => {
+  constructor( activatedRoute: ActivatedRoute ) {
+    activatedRoute.params.subscribe( ( params ) => {
       this.postId = params.id;
     });
   }

@@ -1,4 +1,26 @@
 label {
-    display: block;
+    display: inline-block;
+    text-align: right;
+    min-width: 150px;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+}
+
+
+input,
+textarea
+{
     min-width: 300px;
+    max-width: 300px;
+    font-size: 1.2em;
+}
+
+input[type="submit"] {
+    margin-left: calc( 150px + 1em );
+    // width: 100px;
+
+}
+
+.new-content {
+    font-size: 1.2em;
 }

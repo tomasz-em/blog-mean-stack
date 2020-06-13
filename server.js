@@ -1,3 +1,6 @@
+const PORT = process.env.PORT || 3000;  // pobranie ze zmiennej środowiskowej (z zewnątrz, np. przy wywołaniu) lub domyślna wartość 3000
+    // port 3000 jest czesto domyślnym dla usług RESTowych na hostingach?! (albo taki standard)
+ 
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -40,8 +43,8 @@ app.get('/api/db-backup', (req, res) => {
 // serve static angular files
 app.use('/', express.static(path.resolve(__dirname, './client/dist/client')));
  
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
  res.sendFile(path.resolve(__dirname, './client/dist/client/index.html'));
 });
  
-app.listen(3000);
+app.listen(PORT);

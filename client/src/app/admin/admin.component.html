@@ -1,23 +1,16 @@
 <h2>Dodawanie nowego wpisu</h2>
-<div>
-    <form>
-        <div>
-            <label>Tytuł<input type="text" /></label>
-        </div>
-        <div>
-            <label>Opis treści<input type="text" /></label>
-        </div>
-        <div>
-            <label>Treść<textarea></textarea></label>
-        </div>
-        <div>
-            <input type="submit" value="Zapisz" />        
-        </div>
-    </form>
+<div class="new-content">
+    <div>
+        <label for="title">Tytuł</label><input type="text" name="title" #title />
+    </div>
+    <div>
+        <label for="about-post">Opis treści</label><input type="text" name="about-post" #shortContent />
+    </div>
+    <div>
+        <label for="content">Treść</label><textarea name="content" #longContent ></textarea>
+    </div>
+    <div>
+        <input type="submit" value="Zapisz" (click)="handleSubmit({title: title.value, shortContent: shortContent.value, longContent: longContent.value })" />
+    </div>
 </div>
-
-
-
-
-
 
