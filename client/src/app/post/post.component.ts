@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Post, postData } from './../post';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
 })
-export class PostComponent implements OnInit {
+export class PostComponent {
+  // @Input() postNumber;
   postId = null;
 
   constructor(activatedRoute: ActivatedRoute) {
@@ -15,5 +17,11 @@ export class PostComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  getPost(): Post {
+    if (this.postId === null) {
+      return null;
+    } else {
+      return postData.find( post => post.id === this.postId );
+    }
+  }
 }

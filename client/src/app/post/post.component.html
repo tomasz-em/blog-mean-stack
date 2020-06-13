@@ -1,1 +1,13 @@
-<p>Selected post id: {{ postId }}</p>
+<div *ngIf="postId !== null">
+    <h2 *ngIf="postId !== null" >{{ getPost()?.title }}</h2>
+    <h3 *ngIf="postId !== null" >{{ getPost()?.shortContent }} </h3>
+    <p *ngIf="postId !== null" >{{ getPost()?.longContent }} </p>
+    <small>post id: {{ postId }}</small><br /> 
+    <a href="./">Powrót do strony głównej</a>
+</div>
+<div *ngIf="postId === null">
+    <h2 style="color: red">Brak takiego posta. Błędny adres?</h2>
+    <small>status id: {{ postId }}</small>
+</div>
+
+<!-- <div *ngIf="postId !== null" >{{ getPost()?.title }} </div>  -->

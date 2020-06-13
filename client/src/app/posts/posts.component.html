@@ -1,1 +1,12 @@
-<p>posts works!</p>
+<h3>Lista wszystkich postów!</h3>
+  
+<div *ngIf="data !== null">
+    <section *ngFor="let element of data; let i = index">
+        <h2>{{ element?.title }} - <a href="post/{{ element?.id }}">Czytaj </a></h2>
+        <h3>{{ element?.shortContent }}</h3>
+        <hr >
+    </section>
+
+</div>  
+
+<div *ngIf="data === null">Brak źródła danych</div>
