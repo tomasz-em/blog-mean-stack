@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { Post, postData } from './../post';
+import { ApiService } from '../apiService';
+// import { Post, postData } from './../post';
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss']
 })
-export class PostsComponent implements OnInit {
-  data = postData;
+export class PostsComponent {
+  data = null;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(apiService: ApiService) {
+    apiService.getPosts().then((data) => {
+      this.data = data;
+    });
+  }    
 
 }

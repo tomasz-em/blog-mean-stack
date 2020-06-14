@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { PostsComponent } from './posts/posts.component';
 import { LoginComponent } from './login/login.component';
+import { ApiService } from './apiService';
+
 
 const routes: Routes = [
   {
@@ -32,7 +34,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [AppComponent, PostsComponent, PostComponent, AdminComponent, LoginComponent],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot( routes ), HttpClientModule],  // dodaj ręcznie "FormsModule" i jest OK
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

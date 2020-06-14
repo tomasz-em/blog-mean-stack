@@ -3,9 +3,9 @@
 <h3>Oto lista wszystkich wartościowych postów:</h3>
   
 <div *ngIf="data !== null">
-    <section *ngFor="let element of data; let i = index">
-        <h2>{{ element?.title }} - <a href="post/{{ element?.id }}">Czytaj </a></h2>
-        <h3>{{ element?.shortContent }}</h3>
+    <section *ngFor="let anyPost of data">
+        <h2>{{ anyPost?.title }} - <a href="post/{{ anyPost?.id }}">Czytaj </a></h2>
+        <h3>{{ anyPost?.shortContent }}</h3>
         <hr />
     </section>
 </div>  

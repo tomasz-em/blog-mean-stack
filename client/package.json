@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "npx ng",
     "start:dev": "npx ng serve",
+    "start:dev2": "set ENV=dev&&npx ng serve",
     "build": "npx ng build",
     "build-prod": "npx ng build --prod --aot",
     "test": "npx ng test",
