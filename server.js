@@ -4,7 +4,10 @@ const PORT = process.env.PORT || 3000;  // pobranie ze zmiennej środowiskowej (
 const express = require('express');
 const app = express();
 const path = require('path');
- 
+const cors = require('cors');
+
+app.use( cors() );  // middleware cors dla otwarcia API n adostęp publiczny (w dowolnego adresu/domeny)
+
 // create post
 app.post('/api/posts', (req, res) => {
  res.send('create post');

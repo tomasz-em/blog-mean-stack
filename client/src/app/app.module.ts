@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms'; // wymagane dopisanie tego by oiperować na formach
+import { HttpClientModule } from '@angular/common/http'
 
 import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
@@ -30,7 +31,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, PostsComponent, PostComponent, AdminComponent, LoginComponent],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot( routes )],  // dodaj ręcznie "FormsModule" i jest OK
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot( routes ), HttpClientModule],  // dodaj ręcznie "FormsModule" i jest OK
   providers: [],
   bootstrap: [AppComponent],
 })
